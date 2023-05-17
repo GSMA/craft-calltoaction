@@ -2,7 +2,7 @@
     "name": "dawsonandrews/craft-calltoaction",
     "description": "A reusable, configurable call to action field",
     "type": "craft-plugin",
-    "version": "1.0.0",
+    "version": "dev-4.0-beta-1",
     "keywords": [
         "craft",
         "cms",
