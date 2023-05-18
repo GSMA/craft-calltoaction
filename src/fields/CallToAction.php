@@ -35,7 +35,7 @@ use craft\helpers\Json;
  */
 class CallToAction extends Field
 {
-    public $type = 'primary';
+    public string $type = 'primary';
 
     const VALID_TYPES = ['primary', 'secondary']; // @todo Configure with table
 
@@ -47,7 +47,7 @@ class CallToAction extends Field
     // Field Settings
     // =========================================================================
 
-    public function rules()
+    public function rules(): array
     {
         $rules = parent::rules();
 
@@ -62,7 +62,7 @@ class CallToAction extends Field
         return Schema::TYPE_TEXT;
     }
 
-    public function getSettingsHtml()
+    public function getSettingsHtml(): ?string
     {
         // Render the settings template
         return Craft::$app->getView()->renderTemplate(
@@ -129,7 +129,7 @@ class CallToAction extends Field
     // Field Value
     // =========================================================================
 
-    public function normalizeValue($value, ElementInterface $element = null)
+    public function normalizeValue($value, ElementInterface $element = null): mixed
     {
         // No value
         if (is_null($value)) {
@@ -158,7 +158,7 @@ class CallToAction extends Field
         return json_decode($value, true);
     }
 
-    public function serializeValue($value, ElementInterface $element = null)
+    public function serializeValue($value, ElementInterface $element = null): mixed
     {
         return json_encode($value);
     }
